@@ -59,3 +59,11 @@ while((j>-1) && (arr[j]>current)){
         return arr;    
 }
 console.log(insertionSort([23,67,96,34,55])); //(5) [23, 34, 55, 67, 96
+
+//Implement compose function
+const compose = (...functions) => (input) => functions.reduceRight((prev, current) => current(prev), input)
+
+const addTen = input => input + 10;
+const multiplyNum = input => input * 30;
+
+console.log(compose(addTen, multiplyNum)(20))// 610
