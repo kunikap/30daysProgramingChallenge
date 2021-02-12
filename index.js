@@ -67,3 +67,17 @@ const addTen = input => input + 10;
 const multiplyNum = input => input * 30;
 
 console.log(compose(addTen, multiplyNum)(20))// 610
+
+// Most reapeated character in a string
+const repeated = (str) => {
+	let maxcount = 0;
+  let maxcountchar = ""
+  str.split('').forEach(function(char){
+  	if(str.split(char).length > maxcount){
+    			maxcount = str.split(char).length 
+          maxcountchar = char;
+    }
+  })
+    return maxcountchar
+}
+console.log(repeated("abcda")) // a
